@@ -69,9 +69,7 @@ async def send_menfess_handler(client: Client, msg: types.Message):
             else:
                 return await msg.reply(f'🙅🏻‍♀️ post gagal terkirim. kamu hari ini telah mengirim ke menfess sebanyak {menfess}/{config.batas_kirim} kali.serta coin mu kurang untuk mengirim menfess diluar batas harian., kamu dapat mengirim menfess kembali pada hari esok.\n\n waktu reset jam 1 pagi', quote=True)
 
-        link = await get_link()
-
-        # Check if the message mentions the sender's username
+       # Check if the message mentions the sender's username
         username = f"@{msg.from_user.username}".lower() if msg.from_user.username else None
 
         # Check if the message contains mentions of other usernames
@@ -87,6 +85,8 @@ async def send_menfess_handler(client: Client, msg: types.Message):
         if re.search(r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", msg.text or ""):
             return await msg.reply("Tidak diizinkan mengirimkan tautan.", quote=True)
 
+
+        link = await get_link()
         kirim = await client.copy_message(config.channel_1, msg.from_user.id, msg.id)
         await helper.send_to_channel_log(type="log_channel", link=link + str(kirim.id))
         await db.update_menfess(coin, menfess, all_menfess)
