@@ -161,8 +161,7 @@ async def on_message(client: Client, msg: Message):
                             enums.ParseMode.HTML,
                         )
                         if key == command.lower()
-                        or len(command.split(' ')) < 3
-                        else:
+                        or len(command.split(' ')) < 3                        
                       await send_menfess_handler(
                             client, msg   )
                     else:
