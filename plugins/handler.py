@@ -167,7 +167,7 @@ async def on_message(client: Client, msg: Message):
                             client, msg   )
                     else:
                         await send_menfess(client, msg)
-                    else:
+                    else
                     await gagal_kirim_handler(client, msg)
                     )
                 elif key in hastag:
