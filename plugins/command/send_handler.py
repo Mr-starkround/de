@@ -49,7 +49,7 @@ async def send_menfess_handler(client: Client, msg: types.Message, key: str, has
 
     # Check if the message mentions the sender's username
     username = f"@{msg.from_user.username}".lower() if msg.from_user.username else None
-    if username and username not in msg.text.lower():
+    if username and username not in msg.text:
         return await msg.reply('Anda hanya dapat mengirim menfess dengan menggunakan username Anda sendiri.', quote=True)
 
     # Check for URLs in the message
