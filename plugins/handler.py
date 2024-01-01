@@ -164,7 +164,8 @@ async def on_message(client: Client, msg: Message):
                         or len(command.split(' ')) < 3     
                     else await send_menfess_handler(
                             client, msg   ),                   
-                        await send_menfess(client, msg)                    
+                        return:
+         await send_menfess(client, msg)                    
                     )
                 elif key in hastag:
                     if key == command.lower() or len(command.split(' ')) < 3:
