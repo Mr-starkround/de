@@ -164,10 +164,14 @@ async def on_message(client: Client, msg: Message):
                         or len(command.split(' ')) < 3
                         else await send_menfess_handler(
                             client, msg   )
+                    else:
+                        return await send_menfess(client, msg)
                     )
                 elif key in hastag:
                     if key == command.lower() or len(command.split(' ')) < 3:
                         return await msg.reply('🙅🏻‍♀️  post gagal terkirim, <b>mengirim pesan wajib lebih dari 3 kata.</b>', True, enums.ParseMode.HTML)
+                    else:
+                        return await send_menfess(client, msg)
                     else:
                         return await send_menfess_handler(client, msg)
                 else:
