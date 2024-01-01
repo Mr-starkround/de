@@ -37,7 +37,7 @@ async def send_menfess(client: Client, msg: types.Message, hastag: list):
     else:
         await msg.reply('media yang didukung photo, video dan voice')
 
-async def send_menfess_handler(client: Client, msg: types.Message):
+async def send_menfess_handler(client: Client, msg: types.Message, key: str, hastag: list):
     helper = Helper(client, msg)
     db = Database(msg.from_user.id)
     db_user = db.get_data_pelanggan()
