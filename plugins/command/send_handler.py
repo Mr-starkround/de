@@ -3,7 +3,7 @@ import re
 from pyrogram import Client, types, enums
 from plugins import Database, Helper
 
-async def send_menfess(client: Client, msg: types.Message):
+async def send_menfess(client: Client, msg: types.Message, key: str, hastag: list):
     helper = Helper(client, msg)
     db = Database(msg.from_user.id)
     db_user = db.get_data_pelanggan()
