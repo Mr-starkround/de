@@ -7,7 +7,7 @@ async def send_with_pic_handler(client: Client, msg: types.Message, key: str, ha
     db = Database(msg.from_user.id)
     helper = Helper(client, msg)
     user = db.get_data_pelanggan()
-
+    db_bot = db.get_data_bot(client.id_bot).kirimchannel
   
     if msg.text or msg.photo or msg.video or msg.voice:
         menfess = user.menfess
