@@ -36,7 +36,7 @@ biaya_gfrent = int(os.environ.get("BIAYA_GFRENT", "10"))
 biaya_bfrent = int(os.environ.get("BIAYA_BFRENT", "10"))
 # =========================================================== #
 
-hastag = os.environ.get("HASTAG", "#NekoGirl |#NekoBoy |#NekoAsk |#NekoFind |#NekoSpill |#NekoStory").replace(" ", "|").lower()
+hastag = os.environ.get("HASTAG", "#mas |mba |#spill |#story |#tanya |#pap").replace(" ", "|").lower()
 # =========================================================== #
 
 pic_boy = os.environ.get("PIC_BOY", "https://telegra.ph/file/387bdabb03deaf94fa4e9.jpg")
