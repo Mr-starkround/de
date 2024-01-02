@@ -29,6 +29,7 @@ async def send_menfess_handler(client: Client, msg: types.Message, key: str, has
                 return await msg.reply(f'🙅🏻‍♀️ post gagal terkirim. kamu hari ini telah mengirim ke menfess sebanyak {menfess}/{config.batas_kirim} kali.serta coin mu kurang untuk mengirim menfess diluar batas harian., kamu dapat mengirim menfess kembali pada hari esok.\n\n waktu reset jam 1 pagi', quote=True)
 
                 if key in [hastag[0], hastag[1]]:
+                 hastag = config.hastag.split('|')
 
         link = await get_link()
 
