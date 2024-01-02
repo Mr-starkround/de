@@ -24,6 +24,7 @@ async def send_with_pic_handler(client: Client, msg: types.Message, key: str, ha
 
         link = await get_link()
         caption = msg.text or msg.caption
+        picture = msg.photo or msg.video
         entities = msg.entities or msg.caption_entities
 
         # Remove URLs from caption
