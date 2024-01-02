@@ -163,7 +163,7 @@ async def on_message(client: Client, msg: Message):
                         if key == command.lower()
                         or len(command.split(' ')) < 3
                    else:
-                        return await send_menfess_handler(client, msg, key, hastag)
+                       await send_menfess_handler(client, msg, key, hastag)
                 else:
                     await gagal_kirim_handler(client, msg)
                     )
