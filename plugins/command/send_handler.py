@@ -20,9 +20,9 @@ async def send_with_pic_handler(client: Client, msg: types.Message, key: str, ha
                 return await msg.reply(f'🙅🏻‍♀️ post gagal terkirim. kamu hari ini telah mengirim ke menfess sebanyak {menfess}/{config.batas_kirim} kali.serta coin mu kurang untuk mengirim menfess diluar batas harian., kamu dapat mengirim menfess kembali pada hari esok.\n\n waktu reset jam 1 pagi. \n\n\n\n Info: Topup Coin Hanya ke @OwnNeko', quote=True)
 
         if key == hastag[0]: 
-         picture = msg.photo_from_user.id           
+             picture = msg.photo_from_user.id           
         elif key == hastag[1]:
-        picture = msg.video_from_user.id               
+             picture = msg.video_from_user.id               
 
         link = await get_link()
         caption = msg.text or msg.caption
