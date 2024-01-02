@@ -154,7 +154,7 @@ async def on_message(client: Client, msg: Message):
                 if member.status == 'banned':
                     return await msg.reply(f'Kamu telah <b>di banned</b>\n\n<u>Alasan:</u> {database.get_data_bot(client.id_bot).ban[str(uid)]}\nsilahkan kontak @OwnNeko untuk unbanned', True, enums.ParseMode.HTML)
                 if key in [hastag[0], hastag[1]]:
-                    return 
+                    return (
                         await msg.reply(
                             '🙅🏻‍♀️  post gagal terkirim, <b>mengirim pesan wajib lebih dari 3 kata.</b>',
                             True,
@@ -166,17 +166,19 @@ async def on_message(client: Client, msg: Message):
                        await send_menfess_handler(client, msg, key, hastag)
                 else:
                     await gagal_kirim_handler(client, msg)
-                    
+                   ) 
 
                 elif key in hastag:
                     if key == command.lower() or len(command.split(' ')) < 3:
-                        return await msg.reply('🙅🏻‍♀️  post gagal terkirim, <b>mengirim pesan wajib lebih dari 3 kata.</b>', True, enums.ParseMode.HTML)
+                        return (
+                         await msg.reply('<b>mengirim pesan wajib lebih dari 3 kata.</b>', True, enums.ParseMode.HTML)
                     else:
                         return await send_menfess_handler(client, msg, key, hastag)
                 else:
                     await gagal_kirim_handler(client, msg)
             else:
                 await gagal_kirim_handler(client, msg)
+               )
     elif msg.chat.type == enums.ChatType.SUPERGROUP:
         command = msg.text or msg.caption
         if msg.from_user is None:
