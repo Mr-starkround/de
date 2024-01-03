@@ -156,7 +156,7 @@ async def on_message(client: Client, msg: Message):
                 if key in [hastag[0], hastag[1]]:
                     return (
                         await msg.reply(
-                            '🙅🏻‍♀️  post gagal terkirim, <b>mengirim pesan wajib lebih dari 3 kata.</b>',
+                            '⚠️  post gagal terkirim, <b>mengirim pesan wajib lebih dari 3 kata.</b>',
                             True,
                             enums.ParseMode.HTML,
                         )
